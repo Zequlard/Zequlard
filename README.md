@@ -1,4 +1,16 @@
-## Hi there 👋
+# 👋 Gretings
+
+I'm a software developer interested in web, game, command line tool development, and machine learning. I'm also an open source enthusiast.
+
+<!-- 
+
+about me
+
+a software dev 
+interested in web, game, command line tool dev, and machine learning
+open source enthusiast
+
+-->
 
 <!--
 **Zequlard/Zequlard** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
