@@ -24,6 +24,7 @@ const versions: Row[] = [
   [`React ${reactPkg.version}`, { en: "Server Components; client code only for the contact form and language switch", zh: "Server Components；只有聯絡表單與語言切換用到客戶端程式碼" }],
   [`Tailwind CSS ${tailwindPkg.version}`, { en: "Tokens declared in CSS with @theme", zh: "以 @theme 在 CSS 中宣告設計變數" }],
   [`nuqs ${nuqsPkg.version}`, { en: "Server-side search param parsing for /stack", zh: "在伺服器端解析 /stack 的網址參數" }],
+  ["Resend REST API", { en: "Contact form email via fetch, no SDK; visitor's address as reply-to", zh: "聯絡表單以 fetch 寄信，不使用 SDK；訪客信箱作為回覆地址" }],
 ];
 
 const cacheContract: Row[] = [
