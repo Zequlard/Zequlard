@@ -18,7 +18,7 @@ const noFilters: Filters = { level: null, area: null };
 
 type Ctx = { locale: Locale; dict: Dictionary };
 
-// Name · decision · level · proof. Phones stack the pieces instead.
+// Name · about · level · proof. Phones stack the pieces instead.
 const columns =
   "gap-x-6 sm:grid-cols-[minmax(0,10rem)_minmax(0,1fr)_auto_auto] lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)_7rem_5rem]";
 
@@ -65,7 +65,7 @@ function StackMap({ filters, ctx }: { filters: Filters; ctx: Ctx }) {
           carries its level and proof in words. */}
       <div aria-hidden="true" className={`hairline hidden border-y py-3 sm:grid ${columns}`}>
         <span className="label">{dict.stack.name}</span>
-        <span className="label">{dict.stack.decision}</span>
+        <span className="label">{dict.stack.about}</span>
         <span className="label">{dict.stack.level}</span>
         <span className="label text-right">{dict.stack.proof}</span>
       </div>
@@ -73,7 +73,7 @@ function StackMap({ filters, ctx }: { filters: Filters; ctx: Ctx }) {
         {rows.map((entry) => (
           <li key={entry.name} className={`hairline grid border-b py-5 sm:items-baseline ${columns}`}>
             <span className="text-step-1 leading-tight">{entry.name}</span>
-            <span className="text-mute mt-2 max-w-[44ch] leading-snug sm:mt-0">{entry.decision[locale]}</span>
+            <span className="text-mute mt-2 max-w-[44ch] leading-snug sm:mt-0">{entry.about[locale]}</span>
             <span className="mt-4 flex justify-between sm:contents">
               <span className={`label whitespace-nowrap ${entry.level === "this-site" ? "text-sage" : ""}`}>
                 {dict.stack.levels[entry.level]}

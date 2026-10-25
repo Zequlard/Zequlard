@@ -41,7 +41,7 @@ const omissions: Row[] = [
   [{ en: "No analytics", zh: "沒有流量分析" }, { en: "Nothing here needs to know who you are.", zh: "這裡沒有任何東西需要知道你是誰。" }],
   [{ en: "No CMS yet", zh: "暫時沒有 CMS" }, { en: "Content lives in code until Payload earns its place; the read functions are the seam.", zh: "在 Payload 證明值得導入之前，內容先放在程式碼裡；讀取函式就是之後替換的接縫。" }],
   [{ en: "No client-side typing script", zh: "沒有客戶端打字腳本" }, { en: "The name is typed with CSS and respects reduced motion.", zh: "名字的打字效果只用 CSS，並尊重「減少動態效果」設定。" }],
-  [{ en: "No tech-logo wall", zh: "沒有技術 logo 牆" }, { en: "The stack page names decisions, not brands, and every row links to proof.", zh: "技術頁寫的是決策而不是品牌，每一列都連到證明。" }],
+  [{ en: "No tech-logo wall", zh: "沒有技術 logo 牆" }, { en: "The stack page gives each tool one line and a link to where it was used.", zh: "技術頁每個工具一行簡介，每一列都連到用過它的作品。" }],
   [{ en: "No light theme", zh: "沒有淺色主題" }, { en: "One palette, done carefully, beats two done halfway.", zh: "把一套配色做好，勝過兩套都做一半。" }],
   [{ en: "Not everything is translated", zh: "不是所有內容都翻譯" }, { en: "Prose that matters is bilingual; tool names and code stay as they are.", zh: "重要的文字有中英雙語；工具名稱與程式碼維持原文。" }],
 ];
