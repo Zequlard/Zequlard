@@ -18,6 +18,10 @@ const noFilters: Filters = { level: null, area: null };
 
 type Ctx = { locale: Locale; dict: Dictionary };
 
+// Name · decision · level · proof. Phones stack the pieces instead.
+const columns =
+  "gap-x-6 sm:grid-cols-[minmax(0,10rem)_minmax(0,1fr)_auto_auto] lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)_7rem_5rem]";
+
 export default async function StackPage({ searchParams }: PageProps<"/[lang]/stack">) {
   const [locale, dict] = await Promise.all([getLocale(), getDictionary()]);
   const ctx = { locale, dict };
@@ -56,41 +60,33 @@ function StackMap({ filters, ctx }: { filters: Filters; ctx: Ctx }) {
         <FilterGroup label={dict.stack.area} name="area" options={areas} filters={filters} ctx={ctx} />
       </nav>
 
-      <table className="w-full border-collapse text-left">
-        <thead className="sr-only sm:not-sr-only">
-          <tr className="hairline border-y">
-            <th className="label py-3 font-normal">{dict.stack.name}</th>
-            <th className="label hidden py-3 font-normal sm:table-cell">{dict.stack.decision}</th>
-            <th className="label py-3 font-normal">{dict.stack.level}</th>
-            <th className="label py-3 text-right font-normal">{dict.stack.proof}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((entry) => (
-            <tr key={entry.name} className="hairline border-b align-baseline">
-              <td className="py-5 pr-6 text-step-1 leading-tight sm:w-[24%]">
-                {entry.name}
-                <span className="text-mute mt-2 block text-step-0 leading-snug sm:hidden">{entry.decision[locale]}</span>
-              </td>
-              <td className="text-mute hidden max-w-[44ch] py-5 pr-6 leading-snug sm:table-cell">
-                {entry.decision[locale]}
-              </td>
-              <td className="label py-5 pr-6 whitespace-nowrap">
-                {entry.level === "this-site" ? (
-                  <span className="text-sage">{dict.stack.levels[entry.level]}</span>
-                ) : (
-                  dict.stack.levels[entry.level]
-                )}
-              </td>
-              <td className="label py-5 text-right">
-                <Link href={localizedPath(locale, entry.proof)} className="hover:text-paper">
+      {/* One grid for every width: a stacked card on phones, a four-column
+          table from sm up. The header row is visual only; each row already
+          carries its level and proof in words. */}
+      <div aria-hidden="true" className={`hairline hidden border-y py-3 sm:grid ${columns}`}>
+        <span className="label">{dict.stack.name}</span>
+        <span className="label">{dict.stack.decision}</span>
+        <span className="label">{dict.stack.level}</span>
+        <span className="label text-right">{dict.stack.proof}</span>
+      </div>
+      <ul className="hairline border-t sm:border-t-0">
+        {rows.map((entry) => (
+          <li key={entry.name} className={`hairline grid border-b py-5 sm:items-baseline ${columns}`}>
+            <span className="text-step-1 leading-tight">{entry.name}</span>
+            <span className="text-mute mt-2 max-w-[44ch] leading-snug sm:mt-0">{entry.decision[locale]}</span>
+            <span className="mt-4 flex justify-between sm:contents">
+              <span className={`label whitespace-nowrap ${entry.level === "this-site" ? "text-sage" : ""}`}>
+                {dict.stack.levels[entry.level]}
+              </span>
+              <span className="label sm:text-right">
+                <Link href={localizedPath(locale, entry.proof)} className="no-underline hover:text-paper">
                   {dict.stack.proof} →
                 </Link>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+              </span>
+            </span>
+          </li>
+        ))}
+      </ul>
       {rows.length === 0 && <p className="text-mute py-10">{dict.stack.empty}</p>}
     </>
   );

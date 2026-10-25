@@ -40,7 +40,7 @@ export function ContactForm({ copy }: { copy: Copy }) {
       <button
         type="submit"
         disabled={pending}
-        className="label hairline border px-5 py-3 text-paper! hover:border-sage disabled:opacity-50"
+        className="label border border-mute/40 px-5 py-3 text-paper! transition-colors hover:border-sage disabled:opacity-50"
       >
         {pending ? copy.sending : copy.send}
       </button>
@@ -71,7 +71,7 @@ function Field({
     "aria-invalid": error ? true : undefined,
     "aria-describedby": error ? `${name}-error` : undefined,
     className:
-      "hairline mt-2 block w-full border-b bg-transparent py-2 text-step-1 font-light outline-none focus:border-sage",
+      "mt-2 block w-full border-b border-mute/40 bg-transparent py-2 text-step-1 font-light outline-none transition-colors focus:border-sage",
   };
 
   return (
@@ -79,7 +79,7 @@ function Field({
       <label htmlFor={name} className="label">
         {copy[name]}
       </label>
-      {multiline ? <textarea rows={5} {...shared} /> : <input {...props} {...shared} />}
+      {multiline ? <textarea rows={5} {...shared} className={`${shared.className} resize-y`} /> : <input {...props} {...shared} />}
       {error && (
         <p id={`${name}-error`} className="text-sage mt-2 text-step--1">
           {error}

@@ -8,7 +8,7 @@ const en = {
       "Editorial portfolio of Zequlard: shipped work, the stack behind it, and notes on how it was made.",
   },
   nav: { work: "Work", stack: "Stack", writing: "Writing", lab: "Lab", soon: "Coming in a later phase" },
-  footer: { now: "Now", colophon: "Colophon", contact: "Contact" },
+  footer: { now: "Now", colophon: "Colophon", contact: "Contact", rights: "All rights reserved" },
   switchTo: "中文",
   switchToLabel: "閱讀中文版",
   now: {
@@ -28,6 +28,8 @@ const en = {
     role: "Role",
     stack: "Stack",
     live: "Live",
+    visit: "Visit the site",
+    next: "Next work",
     placeholder: "Placeholder entry — replace before launch",
   },
   stack: {
@@ -79,7 +81,7 @@ const zh: Dictionary = {
     description: "Zequlard 的作品集：已上線的作品、背後的技術選擇，以及它們是怎麼做出來的。",
   },
   nav: { work: "作品", stack: "技術", writing: "文章", lab: "實驗", soon: "之後的階段推出" },
-  footer: { now: "近況", colophon: "版權頁", contact: "聯絡" },
+  footer: { now: "近況", colophon: "版權頁", contact: "聯絡", rights: "保留所有權利" },
   switchTo: "EN",
   switchToLabel: "Read in English",
   now: {
@@ -99,6 +101,8 @@ const zh: Dictionary = {
     role: "角色",
     stack: "技術",
     live: "網站",
+    visit: "前往網站",
+    next: "下一件作品",
     placeholder: "範例內容 — 上線前請替換",
   },
   stack: {

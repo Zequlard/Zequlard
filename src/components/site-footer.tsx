@@ -18,7 +18,9 @@ export async function SiteFooter() {
           </li>
         ))}
       </ul>
-      <p className="label">{site.name}</p>
+      <p className="label">
+        © {site.name} · {dict.footer.rights}
+      </p>
     </footer>
   );
 }
