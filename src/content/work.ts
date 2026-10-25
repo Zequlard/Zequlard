@@ -29,7 +29,7 @@ export const works: Work[] = [
     year: 2026,
     role: { en: "Design, engineering", zh: "設計、工程" },
     stack: ["Next.js", "Auth.js", "Drizzle ORM", "Postgres", "MJML", "dnd-kit", "Vercel Blob", "Resend"],
-    url: "https://meows-beta.vercel.app",
+    url: "https://meows.coffee",
     problem: {
       en: [
         "Email HTML is its own dialect: table layouts, inline styles, and clients that each ignore something different. A layout that looks right in the browser can fall apart in Outlook or on a phone.",

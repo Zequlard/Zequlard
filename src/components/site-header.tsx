@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LocaleSwitch } from "@/components/locale-switch";
+import { NavLink } from "@/components/nav-link";
 import { nav, site } from "@/content/site";
 import { localizedPath } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
@@ -19,9 +20,7 @@ export async function SiteHeader() {
             {nav.map((item) => (
               <li key={item.href} className="label">
                 {item.live ? (
-                  <Link href={localizedPath(locale, item.href)} className="text-paper! no-underline hover:underline">
-                    {dict.nav[item.key]}
-                  </Link>
+                  <NavLink href={localizedPath(locale, item.href)}>{dict.nav[item.key]}</NavLink>
                 ) : (
                   <span aria-disabled="true" title={dict.nav.soon}>
                     {dict.nav[item.key]}

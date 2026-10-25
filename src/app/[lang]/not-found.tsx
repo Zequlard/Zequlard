@@ -7,7 +7,12 @@ export default async function NotFound() {
   const [locale, dict] = await Promise.all([getLocale(), getDictionary()]);
   return (
     <PageHead eyebrow="404" title={dict.notFound.title}>
-      {dict.notFound.body} <Link href={localizedPath(locale, "/")}>{dict.notFound.back}</Link>.
+      <p>{dict.notFound.body}</p>
+      <p className="mt-6">
+        <Link href={localizedPath(locale, "/")} className="label no-underline hover:text-paper">
+          {dict.notFound.back} →
+        </Link>
+      </p>
     </PageHead>
   );
 }
