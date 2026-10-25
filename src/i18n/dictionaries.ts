@@ -11,6 +11,7 @@ const en = {
   footer: { now: "Now", colophon: "Colophon", contact: "Contact", rights: "All rights reserved" },
   switchTo: "中文",
   switchToLabel: "閱讀中文版",
+  home: { stack: "The tools behind the work" },
   now: {
     title: "What has my attention at the moment.",
     description: "What I am working on at the moment.",
@@ -84,6 +85,7 @@ const zh: Dictionary = {
   footer: { now: "近況", colophon: "版權頁", contact: "聯絡", rights: "保留所有權利" },
   switchTo: "EN",
   switchToLabel: "Read in English",
+  home: { stack: "作品背後的技術" },
   now: {
     title: "最近在忙的事。",
     description: "我目前正在進行的事情。",
